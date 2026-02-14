@@ -1,0 +1,12 @@
+# .gitleaks.toml
+
+[[rules]]
+    id = "custom-aws-secret-block"
+    description = "Blocks a specific hardcoded AWS Secret Key"
+    regex = '''AWS_SECRET_KEY=1234'''
+    keywords = ["AWS_SECRET_KEY"]
+
+# Optional: Extend the default rules so you still catch 
+# standard leaks while blocking your specific case.
+[extend]
+    useDefault = true
