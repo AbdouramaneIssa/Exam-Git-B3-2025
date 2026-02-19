@@ -1,0 +1,23 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Annonce début
+        run: echo "Début du déploiement"
+
+      - name: Récupération du Secret
+        run: |
+          echo "Valeur du token : ${{ secrets.DEPLOY_TOKEN }}"
+
+      - name: Annonce fin
+        run: echo "Déploiement terminé par ABDOURAMANE ISSA FREE PALESTINE"
